@@ -19,7 +19,7 @@ function getDomainSeparationString(action, origin, network, contract) {
 }
 
 function getChallengeMessage(nonce, address, domainSeparation) {
-  return `EduVault\nAddress: ${address}\nNonce: ${nonce}\nDomain: ${domainSeparation}\nTimestamp: ${Date.now()}`;
+  return `ScholarMarket\nAddress: ${address}\nNonce: ${nonce}\nDomain: ${domainSeparation}\nTimestamp: ${Date.now()}`;
 }
 
 export async function issueChallenge(address, options = {}) {

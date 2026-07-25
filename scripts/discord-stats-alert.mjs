@@ -6,9 +6,9 @@
  *   node scripts/discord-stats-alert.mjs
  *
  * Environment variables:
- *   DISCORD_WEBHOOK_URL — required; Discord webhook endpoint URL
- *   MONGODB_URI         — required; MongoDB connection string
- *   MONGODB_DB          — optional; database name (default: "eduvault")
+ *   DISCORD_WEBHOOK_URL ï¿½ required; Discord webhook endpoint URL
+ *   MONGODB_URI         ï¿½ required; MongoDB connection string
+ *   MONGODB_DB          ï¿½ optional; database name (default: "scholarmarket")
  */
 
 import { getDb } from '../src/lib/mongodb.js';

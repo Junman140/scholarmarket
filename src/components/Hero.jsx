@@ -106,7 +106,7 @@ export default function Hero() {
             <div className="relative z-10 w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/20 backdrop-blur-sm">
               <Image
                 src="/hero-stellar.png"
-                alt="EduVault Education Platform"
+                alt="ScholarMarket Education Platform"
                 fill
                 className="object-cover"
                 priority

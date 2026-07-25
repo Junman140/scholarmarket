@@ -18,7 +18,7 @@ import {
 import { useAccount, useWriteContract, useWaitForTransactionReceipt, useSwitchChain } from "wagmi";
 import { FaCloudUploadAlt, FaCheck, FaArrowRight, FaArrowLeft, FaFileAlt, FaTags, FaDollarSign, FaEye, FaExclamationTriangle } from "react-icons/fa";
 import { useWallet } from "@/hooks/useWallet";
-import { abi } from "../../../../../contracts/EduVaultAbi.js";
+import { abi } from "../../../../../contracts/ScholarMarketAbi.js";
 import { parseAbiItem } from "viem";
 import { useCreateMaterial, useUploadFile } from "@/hooks/api/useMaterials";
 import TransactionStatusPanel from "@/components/transactions/TransactionStatusPanel";

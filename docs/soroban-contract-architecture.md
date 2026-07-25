@@ -2,7 +2,7 @@
 
 Status: accepted for the first Stellar-native implementation pass.
 
-This note defines the contract boundary, storage ownership model, event contract, and trust assumptions for EduVault's Soroban milestone. It is the canonical reference for issue #30 and should be treated as the source of truth for later contract, backend, and frontend work.
+This note defines the contract boundary, storage ownership model, event contract, and trust assumptions for ScholarMarket's Soroban milestone. It is the canonical reference for issue #30 and should be treated as the source of truth for later contract, backend, and frontend work.
 
 ## Goals
 
@@ -26,7 +26,7 @@ This note defines the contract boundary, storage ownership model, event contract
 - `MaterialRegistry` is the source of truth for creator-owned listing state.
 - `PurchaseManager` is the source of truth for payment settlement, platform config, and buyer entitlements.
 - Assets are represented only by Stellar Asset Contract addresses. Human-readable asset code and issuer stay off-chain.
-- Each material stores explicit per-asset price quotes. EduVault does not use exchange-rate oracles.
+- Each material stores explicit per-asset price quotes. ScholarMarket does not use exchange-rate oracles.
 - Entitlements are perpetual, non-transferable, and unique per `(material_id, buyer)` pair.
 - Production deployments are migration-driven, not upgradeable in place.
 
@@ -165,7 +165,7 @@ These caps keep storage bounded and event payloads indexable.
 
 ## Accepted-Asset Model
 
-EduVault uses a two-layer asset rule:
+ScholarMarket uses a two-layer asset rule:
 
 1. `PurchaseManager` maintains a platform allowlist of supported Stellar Asset Contract addresses.
 2. Each `MaterialRecord` stores one or more explicit `AssetQuote` entries.
@@ -419,7 +419,7 @@ Creator may not:
 
 ## Upgradeability and Migration Stance
 
-EduVault should be migration-driven.
+ScholarMarket should be migration-driven.
 
 That means:
 

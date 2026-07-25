@@ -19,7 +19,7 @@
                   "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFCT4"
                 },
                 {
-                  "string": "ipfs://eduvault/material/intro-to-soroban"
+                  "string": "ipfs://scholarmarket/material/intro-to-soroban"
                 },
                 {
                   "bytes": "2121212121212121212121212121212121212121212121212121212121212121"
@@ -235,7 +235,7 @@
                       "symbol": "metadata_uri"
                     },
                     "val": {
-                      "string": "ipfs://eduvault/material/intro-to-soroban"
+                      "string": "ipfs://scholarmarket/material/intro-to-soroban"
                     }
                   },
                   {

@@ -22,8 +22,8 @@ const connectors = [
   }),
   // Coinbase Wallet — always available regardless of WalletConnect status
   coinbaseWallet({
-    appName: 'EduVault',
-    appLogoUrl: 'https://eduvault.com/icon.png',
+    appName: 'ScholarMarket',
+    appLogoUrl: 'https://scholarmarket.com/icon.png',
   }),
 ];
 
@@ -32,10 +32,10 @@ if (walletConnectEnabled) {
     walletConnect({
       projectId: _rawProjectId,
       metadata: {
-        name: 'EduVault',
+        name: 'ScholarMarket',
         description: 'Decentralized Educational Materials Sharing Platform',
         url: typeof window !== 'undefined' ? window.location.origin : '',
-        icons: ['https://eduvault.com/icon.png'],
+        icons: ['https://scholarmarket.com/icon.png'],
       },
       showQrModal: true,
     })

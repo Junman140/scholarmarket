@@ -53,7 +53,7 @@ jobs:
         with:
           payload: |
             {
-              "text": ":rotating_light: *EduVault MongoDB backup failed* on `${{ github.ref_name }}`\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View run>"
+              "text": ":rotating_light: *ScholarMarket MongoDB backup failed* on `${{ github.ref_name }}`\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View run>"
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.BACKUP_SLACK_WEBHOOK_URL }}

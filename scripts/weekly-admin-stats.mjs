@@ -112,7 +112,7 @@ async function fetchWeeklyStats(db) {
 // ---------------------------------------------------------------------------
 function buildText(stats) {
   return [
-    'EduVault Weekly Marketplace Report',
+    'ScholarMarket Weekly Marketplace Report',
     `Period: ${stats.weekStart.slice(0, 10)} – ${stats.weekEnd.slice(0, 10)}`,
     '',
     `Total completed sales : ${stats.totalSales}`,
@@ -135,13 +135,13 @@ function buildHtml(stats) {
     </tr>`
 
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"/>
-  <title>EduVault Weekly Report</title></head>
+  <title>ScholarMarket Weekly Report</title></head>
   <body style="margin:0;padding:0;background:#f6f9fc;">
   <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
     <tr><td align="center" style="padding:24px;">
       <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width:600px;">
         <tr><td align="center" style="padding:0 0 12px 0;">
-          <span style="font-family:system-ui,sans-serif;font-weight:700;font-size:18px;color:#111827;">EduVault</span>
+          <span style="font-family:system-ui,sans-serif;font-weight:700;font-size:18px;color:#111827;">ScholarMarket</span>
         </td></tr>
         <tr><td style="background:#fff;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.06);overflow:hidden;">
           <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
@@ -164,7 +164,7 @@ function buildHtml(stats) {
           </table>
         </td></tr>
         <tr><td align="center" style="padding:16px 0 0 0;">
-          <p style="font-size:12px;color:#9ca3af;font-family:system-ui,sans-serif;">© ${new Date().getUTCFullYear()} EduVault · Automated weekly report</p>
+          <p style="font-size:12px;color:#9ca3af;font-family:system-ui,sans-serif;">© ${new Date().getUTCFullYear()} ScholarMarket · Automated weekly report</p>
         </td></tr>
       </table>
     </td></tr>
@@ -181,7 +181,7 @@ function buildHtml(stats) {
   const { MongoClient, nodemailer } = await loadDeps()
 
   const uri = process.env.MONGODB_URI
-  const dbName = process.env.MONGODB_DB || new URL(uri.replace(/\?.*$/, '')).pathname.replace(/^\//, '') || 'eduvault'
+  const dbName = process.env.MONGODB_DB || new URL(uri.replace(/\?.*$/, '')).pathname.replace(/^\//, '') || 'scholarmarket'
 
   const client = new MongoClient(uri, { serverSelectionTimeoutMS: 10_000 })
   await client.connect()
@@ -201,7 +201,7 @@ function buildHtml(stats) {
   const smtpPort = Number(process.env.SMTP_PORT || 0)
   const smtpUser = process.env.SMTP_USER || process.env.EMAIL_USER
   const smtpPass = process.env.SMTP_PASS || process.env.EMAIL_PASS
-  const from = process.env.EMAIL_FROM || smtpUser || 'no-reply@eduvault.local'
+  const from = process.env.EMAIL_FROM || smtpUser || 'no-reply@scholarmarket.local'
 
   let transport
   if (smtpHost) {
@@ -219,7 +219,7 @@ function buildHtml(stats) {
     process.exit(1)
   }
 
-  const subject = `EduVault Weekly Report — w/c ${stats.weekStart.slice(0, 10)}`
+  const subject = `ScholarMarket Weekly Report — w/c ${stats.weekStart.slice(0, 10)}`
   await transport.sendMail({ from, to: recipients.join(', '), subject, text: buildText(stats), html: buildHtml(stats) })
 
   log('info', 'Weekly report delivered', { recipients, subject })

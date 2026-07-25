@@ -124,7 +124,7 @@ function buildReportHtml(stats) {
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>EduVault Weekly Report</title>
+  <title>ScholarMarket Weekly Report</title>
   <style>
     @media (prefers-color-scheme:dark){
       .card{background:#111827!important;color:#e5e7eb!important;}
@@ -140,8 +140,8 @@ function buildReportHtml(stats) {
         <tr>
           <td style="padding:0 0 12px 0;" align="center">
             <a href="${appUrl}" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px;color:#111827;">
-              <img src="${appUrl}/images/stellar.png" width="36" height="36" alt="EduVault" style="border:0;display:block;"/>
-              <span style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-weight:700;font-size:18px;">EduVault</span>
+              <img src="${appUrl}/images/stellar.png" width="36" height="36" alt="ScholarMarket" style="border:0;display:block;"/>
+              <span style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-weight:700;font-size:18px;">ScholarMarket</span>
             </a>
           </td>
         </tr>
@@ -182,7 +182,7 @@ function buildReportHtml(stats) {
         <tr>
           <td align="center" style="padding:16px 8px 0 8px;">
             <p class="muted" style="margin:0 0 24px 0;font-size:12px;color:#6b7280;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
-              © ${new Date().getUTCFullYear()} EduVault · Automated weekly report
+              © ${new Date().getUTCFullYear()} ScholarMarket · Automated weekly report
             </p>
           </td>
         </tr>
@@ -197,7 +197,7 @@ function buildReportText(stats) {
   const weekLabel = new Date(stats.weekStart).toISOString().slice(0, 10)
   const weekEndLabel = new Date(stats.weekEnd).toISOString().slice(0, 10)
   return [
-    `EduVault Weekly Marketplace Report`,
+    `ScholarMarket Weekly Marketplace Report`,
     `Period: ${weekLabel} – ${weekEndLabel}`,
     ``,
     `Total completed sales : ${stats.totalSales}`,
@@ -230,8 +230,8 @@ export async function sendWeeklyAdminReport(overrideStats) {
 
   const stats = overrideStats || (await fetchWeeklyStats())
   const transporter = createTransporter()
-  const from = process.env.EMAIL_FROM || process.env.EMAIL_USER || 'no-reply@eduvault.local'
-  const subject = `EduVault Weekly Report — w/c ${new Date(stats.weekStart).toISOString().slice(0, 10)}`
+  const from = process.env.EMAIL_FROM || process.env.EMAIL_USER || 'no-reply@scholarmarket.local'
+  const subject = `ScholarMarket Weekly Report — w/c ${new Date(stats.weekStart).toISOString().slice(0, 10)}`
 
   await transporter.sendMail({
     from,

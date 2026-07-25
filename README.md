@@ -1,6 +1,6 @@
-# EduVault
+# ScholarMarket
 
-EduVault is an educational content marketplace that helps educators, students, and creators publish, license, sell, and manage access to learning materials.
+ScholarMarket is an educational content marketplace that helps educators, students, and creators publish, license, sell, and manage access to learning materials.
 
 The project combines a modern Next.js application with off-chain file storage, searchable marketplace data, and a planned Stellar/Soroban payment and entitlement layer for low-cost educational content transactions.
 
@@ -8,7 +8,7 @@ The project combines a modern Next.js application with off-chain file storage, s
 
 Many educational resources are shared through informal channels such as WhatsApp groups, Telegram communities, and manual file transfers. This makes it difficult for creators to earn fairly, buyers to verify ownership, and institutions to manage trusted access.
 
-EduVault provides a creator-first marketplace where learning materials can be uploaded, listed, discovered, purchased, and accessed securely.
+ScholarMarket provides a creator-first marketplace where learning materials can be uploaded, listed, discovered, purchased, and accessed securely.
 
 ## Core Features
 
@@ -100,8 +100,8 @@ This legacy code is kept for historical reference and testing only. New blockcha
 ### Installation
 
 ```bash
-git clone https://github.com/Obiajulu-gif/eduvault.git
-cd eduvault
+git clone https://github.com/Obiajulu-gif/scholarmarket.git
+cd scholarmarket
 npm install
 cp .env.example .env.local
 ```
@@ -131,7 +131,7 @@ Use `.env.example` as the main reference for local configuration.
 | Variable | Required | Purpose |
 | --- | --- | --- |
 | `MONGODB_URI` | Yes | MongoDB connection string |
-| `MONGODB_DB` | No | MongoDB database name. Defaults to `eduvault` |
+| `MONGODB_DB` | No | MongoDB database name. Defaults to `scholarmarket` |
 | `JWT_SECRET` | Yes | Signs session cookies for authenticated routes |
 | `NEXT_PUBLIC_APP_URL` | Yes | Public app URL used in links and emails |
 | `PINATA_JWT` | Yes | Pinata authentication for uploads |

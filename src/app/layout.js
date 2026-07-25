@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "EduVault - Decentralized Educational Materials Sharing",
-  description: "Share and monetize your educational materials on the blockchain with EduVault",
+  title: "ScholarMarket - Decentralized Educational Materials Sharing",
+  description: "Share and monetize your educational materials on the blockchain with ScholarMarket",
   icons: {
     icon: "/logo.png",              // general favicon
     shortcut: "/logo.png",          // legacy shortcut icon
@@ -30,7 +30,7 @@ export const metadata = {
 const themeInitScript = `
 (() => {
   try {
-    const storageKey = "eduvault-theme";
+    const storageKey = "scholarmarket-theme";
     const storedTheme = window.localStorage.getItem(storageKey);
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const theme = storedTheme === "light" || storedTheme === "dark"

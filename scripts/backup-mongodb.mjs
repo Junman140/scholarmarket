@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Automated MongoDB backup script for EduVault (#81).
+ * Automated MongoDB backup script for ScholarMarket (#81).
  *
  * What it does:
  *  1. Runs `mongodump` against MONGODB_URI and writes a compressed archive.
@@ -61,7 +61,7 @@ const S3_REGION = process.env.BACKUP_S3_REGION || "us-east-1";
 // ---------------------------------------------------------------------------
 const now = new Date();
 const datestamp = now.toISOString().replace(/[:.]/g, "-").slice(0, 19);
-const archiveName = `eduvault-backup-${datestamp}.gz`;
+const archiveName = `scholarmarket-backup-${datestamp}.gz`;
 const archivePath = join(tmpdir(), archiveName);
 
 // ---------------------------------------------------------------------------
@@ -129,7 +129,7 @@ async function uploadToS3() {
         Body: createReadStream(archivePath),
         ContentType: "application/gzip",
         Metadata: {
-          source: "eduvault-backup-script",
+          source: "scholarmarket-backup-script",
           created: now.toISOString(),
         },
       })
@@ -162,9 +162,9 @@ function cleanupLocal() {
 // Main
 // ---------------------------------------------------------------------------
 (async () => {
-  log("info", "EduVault backup started", { datestamp });
+  log("info", "ScholarMarket backup started", { datestamp });
   await runMongodump();
   await uploadToS3();
   cleanupLocal();
-  log("info", "EduVault backup finished successfully");
+  log("info", "ScholarMarket backup finished successfully");
 })();

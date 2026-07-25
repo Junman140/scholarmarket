@@ -7,7 +7,7 @@ describe("ThemeToggle", () => {
 		window.localStorage.clear();
 		document.documentElement.dataset.theme = "light";
 		document.documentElement.style.colorScheme = "light";
-		window.localStorage.setItem("eduvault-theme", "light");
+		window.localStorage.setItem("scholarmarket-theme", "light");
 	});
 
 	it("switches the app theme and persists the choice", async () => {
@@ -18,7 +18,7 @@ describe("ThemeToggle", () => {
 
 		await waitFor(() => {
 			expect(document.documentElement.dataset.theme).toBe("dark");
-			expect(window.localStorage.getItem("eduvault-theme")).toBe("dark");
+			expect(window.localStorage.getItem("scholarmarket-theme")).toBe("dark");
 		});
 	});
 });

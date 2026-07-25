@@ -160,7 +160,7 @@ function safeJson(value, fallback = null) {
 export default function BulkMaterialReview({ initialUser }) {
   const storageKey = useMemo(() => {
     const identifier = initialUser?.walletAddress || initialUser?.email || "creator";
-    return `eduvault.bulk-import-draft:${identifier.toLowerCase()}`;
+    return `scholarmarket.bulk-import-draft:${identifier.toLowerCase()}`;
   }, [initialUser]);
 
   const [fileName, setFileName] = useState("");

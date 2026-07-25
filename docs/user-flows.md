@@ -1,4 +1,4 @@
-# EduVault User Flows
+# ScholarMarket User Flows
 
 Two concise user flows are documented below: Creator and Buyer.
 

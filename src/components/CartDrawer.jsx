@@ -192,7 +192,7 @@ export default function CartDrawer() {
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      placeholder="e.g. learner@eduvault.org"
+                      placeholder="e.g. learner@scholarmarket.org"
                       className="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 pl-10 pr-4 py-2 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 text-slate-800 dark:text-slate-100 transition-all font-medium"
                     />
                   </div>

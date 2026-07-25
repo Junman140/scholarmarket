@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { test, describe, before, after } from "node:test";
 import { MongoClient } from "mongodb";
 
-const TEST_DB = "eduvault_test_saved";
+const TEST_DB = "scholarmarket_test_saved";
 const TEST_URI = process.env.MONGODB_URI || "mongodb://localhost:27017";
 
 let client;

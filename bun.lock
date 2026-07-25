@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "eduvault",
+      "name": "scholarmarket",
       "dependencies": {
         "framer-motion": "^12.23.24",
         "next": "16.0.1",

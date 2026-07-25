@@ -1,6 +1,6 @@
 # MaterialRegistry Soroban Contract
 
-This directory contains the Soroban smart contract implementation for the EduVault platform. The MaterialRegistry contract manages the registration and metadata of educational materials on the Stellar blockchain.
+This directory contains the Soroban smart contract implementation for the ScholarMarket platform. The MaterialRegistry contract manages the registration and metadata of educational materials on the Stellar blockchain.
 
 ## Overview
 
@@ -282,14 +282,14 @@ For detailed deployment instructions, see [SOROBAN_DEPLOYMENT.md](../docs/SOROBA
 ./build.sh
 
 # Set up your identity
-soroban config identity generate --global eduvault-deployer
+soroban config identity generate --global scholarmarket-deployer
 
 # Get testnet XLM from: https://friendbot.stellar.org/
 
 # Deploy
 soroban contract deploy \
   --wasm material_registry_optimized.wasm \
-  --source eduvault-deployer \
+  --source scholarmarket-deployer \
   --network testnet
 ```
 
@@ -347,4 +347,4 @@ For issues or questions:
 1. Check the troubleshooting section above
 2. Review test examples in `src/test.rs`
 3. Open an issue on GitHub
-4. Consult the main EduVault documentation
+4. Consult the main ScholarMarket documentation

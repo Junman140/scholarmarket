@@ -76,7 +76,7 @@ export default function Sidebar() {
 
 	return (
 		<aside className="w-64 bg-surface-strong border-r border-border-subtle p-6 flex flex-col fixed h-full overflow-y-auto">
-			<div className="text-2xl font-bold mb-8 shrink-0">EduVault</div>
+			<div className="text-2xl font-bold mb-8 shrink-0">ScholarMarket</div>
 
 			<div className="flex-1 overflow-y-auto">
 				{renderNavSection(mainItems, "Main")}

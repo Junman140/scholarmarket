@@ -2,7 +2,7 @@
 
 ## 1. Architecture Overview
 
-EduVault has transitioned to a native Stellar/Soroban architecture.
+ScholarMarket has transitioned to a native Stellar/Soroban architecture.
 
 - **Frontend:** Next.js with `@stellar/stellar-sdk`.
 - **Contracts:** Soroban/Rust for on-chain logic.

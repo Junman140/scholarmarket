@@ -58,7 +58,7 @@ export async function sendWebhookWithRetry(url, payload, retries = 3) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'User-Agent': 'EduVault-Webhook-Sender/1.0',
+          'User-Agent': 'ScholarMarket-Webhook-Sender/1.0',
         },
         body: JSON.stringify(payload),
         signal: controller.signal,

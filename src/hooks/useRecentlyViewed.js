@@ -4,7 +4,7 @@ import { useMemo, useCallback } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { materialService } from "@/services/materialService";
 
-const STORAGE_KEY = "eduvault.recentlyViewed";
+const STORAGE_KEY = "scholarmarket.recentlyViewed";
 const MAX_ITEMS = 12;
 
 function getStoredIds() {

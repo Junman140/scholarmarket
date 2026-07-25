@@ -64,7 +64,7 @@ export function WalletButton() {
       return (
         <div className={`${CARD} border-amber-200 bg-amber-50/70`}>
           <p className="text-sm text-amber-800">
-            Your wallet is locked or hasn&apos;t granted access to EduVault.
+            Your wallet is locked or hasn&apos;t granted access to ScholarMarket.
           </p>
           <button onClick={connect} className={`${BTN_PRIMARY} self-start`}>
             Unlock and reconnect

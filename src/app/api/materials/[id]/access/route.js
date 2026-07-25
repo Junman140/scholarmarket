@@ -27,7 +27,7 @@ export async function GET(request, { params }) {
       return NextResponse.json({
         status: 'available',
         accessGranted: true,
-        downloadUrl: `https://eduvault.test/downloads/signed/${id}`
+        downloadUrl: `https://scholarmarket.test/downloads/signed/${id}`
       }, { status: 200 });
     }
 

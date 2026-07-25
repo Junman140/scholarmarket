@@ -1,19 +1,19 @@
 # Disaster Recovery & System Restoration Procedures
 
-This document outlines the step-by-step technical procedures required to restore the EduVault system state following a hardware outage, database corruption, or environment-wide deployment failure.
+This document outlines the step-by-step technical procedures required to restore the ScholarMarket system state following a hardware outage, database corruption, or environment-wide deployment failure.
 
 ---
 
 ## 1. Core Database Restoration (MongoDB)
 
-EduVault utilizes MongoDB to store operational profiles, marketplace listings metadata, and cached indexing events.
+ScholarMarket utilizes MongoDB to store operational profiles, marketplace listings metadata, and cached indexing events.
 
 ### Snapshot / Backup Creation
 
 To generate an on-demand compressed binary backup snapshot of the production or staging instance:
 
 ```bash
-mongodump --uri="$MONGODB_URI" --gzip --archive=./eduvault_backup_$(date +%F).archive
+mongodump --uri="$MONGODB_URI" --gzip --archive=./scholarmarket_backup_$(date +%F).archive
 ```
 
 ### Full Restoration Steps
@@ -25,7 +25,7 @@ In the event of active data corruption or provisioning of a blank replacement no
 3. Execute the binary restoration tool against the target database URI:
 
 ```bash
-mongorestore --uri="$MONGODB_URI" --drop --gzip --archive=./eduvault_backup_TIMESTAMP.archive
+mongorestore --uri="$MONGODB_URI" --drop --gzip --archive=./scholarmarket_backup_TIMESTAMP.archive
 ```
 
 > **Note:** The `--drop` flag ensures that existing collections matching the archive schema are safely removed before restoring clean historical data.
@@ -48,7 +48,7 @@ If asset resolution endpoints stall or local media trackers lose file hash synch
 
 ## 3. Blockchain Event Log Resynchronization & Re-indexing
 
-EduVault maintains an off-chain MongoDB cache of on-chain contract activity. If the database becomes corrupted or falls behind ledger state, the cache can be reconstructed using Stellar indexer tooling.
+ScholarMarket maintains an off-chain MongoDB cache of on-chain contract activity. If the database becomes corrupted or falls behind ledger state, the cache can be reconstructed using Stellar indexer tooling.
 
 ### Step 1: Wipe the Outdated or Corrupt Index Cache
 
@@ -154,5 +154,5 @@ The recovery process can be considered complete when:
 - MongoDB Backup & Restore Procedures
 - Pinata IPFS Infrastructure Documentation
 - Stellar Soroban RPC Documentation
-- EduVault Indexer Operations Guide
+- ScholarMarket Indexer Operations Guide
 - Internal Security Incident Response Procedures

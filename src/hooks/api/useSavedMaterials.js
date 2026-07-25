@@ -6,7 +6,7 @@ import { queryKeys } from "@/lib/query/queryKeys";
 import { useWallet } from "@/hooks/useWallet";
 import { savedMaterialService } from "@/services/savedMaterialService";
 
-const STORAGE_PREFIX = "eduvault.savedMaterials.v1";
+const STORAGE_PREFIX = "scholarmarket.savedMaterials.v1";
 
 function getMaterialId(material) {
   return String(material?._id || material?.id || material?.materialId || "");

@@ -91,7 +91,7 @@ describe("parseContractEvent", () => {
         addressTopic(creator),
       ],
       value: vecValue([
-        nativeToScVal("ipfs://eduvault/material/1", { type: "string" }),
+        nativeToScVal("ipfs://scholarmarket/material/1", { type: "string" }),
         nativeToScVal(Buffer.alloc(32, 1), { type: "bytes" }),
         nativeToScVal(Buffer.alloc(32, 2), { type: "bytes" }),
         nativeToScVal(0, { type: "u32" }),

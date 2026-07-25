@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const STORAGE_KEY = "eduvault-theme";
+const STORAGE_KEY = "scholarmarket-theme";
 const LIGHT = "light";
 const DARK = "dark";
 

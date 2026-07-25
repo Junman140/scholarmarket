@@ -33,14 +33,14 @@ function createTransporter() {
 // ---------------------------------------------------------------------------
 function buildSuspensionHtml({ name, reason, appealEmail }) {
   const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
-  const supportEmail = appealEmail || process.env.SUPPORT_EMAIL || process.env.EMAIL_FROM || process.env.EMAIL_USER || 'support@eduvault.local'
+  const supportEmail = appealEmail || process.env.SUPPORT_EMAIL || process.env.EMAIL_FROM || process.env.EMAIL_USER || 'support@scholarmarket.local'
 
   return `<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Your EduVault Account Has Been Suspended</title>
+  <title>Your ScholarMarket Account Has Been Suspended</title>
   <style>
     @media (prefers-color-scheme:dark){
       .card{background:#111827!important;color:#e5e7eb!important;}
@@ -55,7 +55,7 @@ function buildSuspensionHtml({ name, reason, appealEmail }) {
         <tr>
           <td style="padding:0 0 12px 0;" align="center">
             <a href="${appUrl}" style="text-decoration:none;color:#111827;">
-              <span style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-weight:700;font-size:18px;">EduVault</span>
+              <span style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-weight:700;font-size:18px;">ScholarMarket</span>
             </a>
           </td>
         </tr>
@@ -78,11 +78,11 @@ function buildSuspensionHtml({ name, reason, appealEmail }) {
                     Hi ${name},
                   </p>
                   <p style="margin:0 0 16px 0;font-size:14px;line-height:1.6;color:#374151;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
-                    We've temporarily suspended access to your EduVault account. Here's why:
+                    We've temporarily suspended access to your ScholarMarket account. Here's why:
                   </p>
                   <div style="background:#fef2f2;border-left:4px solid #dc2626;border-radius:4px;padding:12px 16px;margin:0 0 20px 0;">
                     <p style="margin:0;font-size:14px;line-height:1.6;color:#7f1d1d;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
-                      ${reason || 'Violation of EduVault community guidelines or terms of service.'}
+                      ${reason || 'Violation of ScholarMarket community guidelines or terms of service.'}
                     </p>
                   </div>
                   <p style="margin:0 0 8px 0;font-size:14px;font-weight:600;color:#111827;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">What this means:</p>
@@ -110,10 +110,10 @@ function buildSuspensionHtml({ name, reason, appealEmail }) {
         <tr>
           <td align="center" style="padding:16px 8px 0 8px;">
             <p class="muted" style="margin:0 0 8px 0;font-size:12px;color:#6b7280;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
-              You're receiving this because your EduVault account status changed.
+              You're receiving this because your ScholarMarket account status changed.
             </p>
             <p class="muted" style="margin:0 0 24px 0;font-size:12px;color:#6b7280;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
-              © ${new Date().getUTCFullYear()} EduVault
+              © ${new Date().getUTCFullYear()} ScholarMarket
             </p>
           </td>
         </tr>
@@ -126,13 +126,13 @@ function buildSuspensionHtml({ name, reason, appealEmail }) {
 
 function buildSuspensionText({ name, reason, appealEmail }) {
   const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
-  const supportEmail = appealEmail || process.env.SUPPORT_EMAIL || process.env.EMAIL_FROM || process.env.EMAIL_USER || 'support@eduvault.local'
+  const supportEmail = appealEmail || process.env.SUPPORT_EMAIL || process.env.EMAIL_FROM || process.env.EMAIL_USER || 'support@scholarmarket.local'
   return [
     `Hi ${name},`,
     ``,
-    `Your EduVault account has been suspended.`,
+    `Your ScholarMarket account has been suspended.`,
     ``,
-    `Reason: ${reason || 'Violation of EduVault community guidelines or terms of service.'}`,
+    `Reason: ${reason || 'Violation of ScholarMarket community guidelines or terms of service.'}`,
     ``,
     `What this means:`,
     `- You cannot log in while your account is suspended.`,
@@ -145,7 +145,7 @@ function buildSuspensionText({ name, reason, appealEmail }) {
     ``,
     `Community guidelines: ${appUrl}/terms`,
     ``,
-    `EduVault Team`,
+    `ScholarMarket Team`,
   ].join('\n')
 }
 
@@ -161,7 +161,7 @@ function buildReactivationHtml({ name }) {
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Your EduVault Account Has Been Reactivated</title>
+  <title>Your ScholarMarket Account Has Been Reactivated</title>
   <style>
     @media (prefers-color-scheme:dark){
       .card{background:#111827!important;color:#e5e7eb!important;}
@@ -176,7 +176,7 @@ function buildReactivationHtml({ name }) {
         <tr>
           <td style="padding:0 0 12px 0;" align="center">
             <a href="${appUrl}" style="text-decoration:none;color:#111827;">
-              <span style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-weight:700;font-size:18px;">EduVault</span>
+              <span style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-weight:700;font-size:18px;">ScholarMarket</span>
             </a>
           </td>
         </tr>
@@ -199,7 +199,7 @@ function buildReactivationHtml({ name }) {
                     Hi ${name},
                   </p>
                   <p style="margin:0 0 16px 0;font-size:14px;line-height:1.6;color:#374151;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
-                    Good news — your EduVault account has been fully reinstated. You can now log in and access all features as normal.
+                    Good news — your ScholarMarket account has been fully reinstated. You can now log in and access all features as normal.
                   </p>
                   <p style="margin:0 0 20px 0;font-size:14px;line-height:1.6;color:#374151;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
                     Please review our community guidelines to ensure continued access:
@@ -218,7 +218,7 @@ function buildReactivationHtml({ name }) {
         <tr>
           <td align="center" style="padding:16px 8px 0 8px;">
             <p class="muted" style="margin:0 0 24px 0;font-size:12px;color:#6b7280;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
-              © ${new Date().getUTCFullYear()} EduVault
+              © ${new Date().getUTCFullYear()} ScholarMarket
             </p>
           </td>
         </tr>
@@ -234,12 +234,12 @@ function buildReactivationText({ name }) {
   return [
     `Hi ${name},`,
     ``,
-    `Your EduVault account has been fully reinstated.`,
+    `Your ScholarMarket account has been fully reinstated.`,
     `You can now log in and access all features as normal.`,
     ``,
     `Please review our guidelines to ensure continued access: ${appUrl}/terms`,
     ``,
-    `EduVault Team`,
+    `ScholarMarket Team`,
   ].join('\n')
 }
 
@@ -253,13 +253,13 @@ function buildReactivationText({ name }) {
  * @param {{ to: string, name: string, reason?: string, appealEmail?: string }} opts
  */
 export async function sendSuspensionEmail({ to, name, reason, appealEmail }) {
-  const from = process.env.EMAIL_FROM || process.env.EMAIL_USER || 'no-reply@eduvault.local'
+  const from = process.env.EMAIL_FROM || process.env.EMAIL_USER || 'no-reply@scholarmarket.local'
   const transporter = createTransporter()
 
   await transporter.sendMail({
     from,
     to,
-    subject: 'Important: Your EduVault account has been suspended',
+    subject: 'Important: Your ScholarMarket account has been suspended',
     text: buildSuspensionText({ name, reason, appealEmail }),
     html: buildSuspensionHtml({ name, reason, appealEmail }),
   })
@@ -271,13 +271,13 @@ export async function sendSuspensionEmail({ to, name, reason, appealEmail }) {
  * @param {{ to: string, name: string }} opts
  */
 export async function sendReactivationEmail({ to, name }) {
-  const from = process.env.EMAIL_FROM || process.env.EMAIL_USER || 'no-reply@eduvault.local'
+  const from = process.env.EMAIL_FROM || process.env.EMAIL_USER || 'no-reply@scholarmarket.local'
   const transporter = createTransporter()
 
   await transporter.sendMail({
     from,
     to,
-    subject: 'Good news: Your EduVault account has been reactivated',
+    subject: 'Good news: Your ScholarMarket account has been reactivated',
     text: buildReactivationText({ name }),
     html: buildReactivationHtml({ name }),
   })

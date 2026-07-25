@@ -497,7 +497,7 @@ function ReportModal({ isOpen, onClose, materialId, materialTitle }) {
 						</div>
 						
 						<p className="text-xs text-gray-500">
-							Help us keep EduVault clean and reliable. Please tell us why you are flagging this listing:
+							Help us keep ScholarMarket clean and reliable. Please tell us why you are flagging this listing:
 						</p>
 
 						<div className="space-y-2">
@@ -801,7 +801,7 @@ export default function MaterialDetailsPage() {
 													On-chain verification
 												</h2>
 												<p className="text-sm text-gray-600 leading-relaxed mb-4">
-													EduVault publishes marketplace metadata through Soroban contracts so
+													ScholarMarket publishes marketplace metadata through Soroban contracts so
 													buyers can verify authenticity before paying.
 												</p>
 												<p className="flex items-center gap-2 text-sm">

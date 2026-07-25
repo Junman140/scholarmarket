@@ -2,12 +2,12 @@
 
 import { useState, useCallback, useEffect, useRef } from "react";
 
-const STORAGE_KEY = "eduvault_notifications";
+const STORAGE_KEY = "scholarmarket_notifications";
 
 const WELCOME = {
   id: "welcome-1",
   type: "info",
-  title: "Welcome to EduVault",
+  title: "Welcome to ScholarMarket",
   message: "Explore the marketplace and discover academic materials.",
   read: false,
   createdAt: new Date(0).toISOString(),

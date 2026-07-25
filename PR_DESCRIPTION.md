@@ -1,7 +1,7 @@
 # PR Description
 
 ## Overview
-This PR implements critical operational safety and compliance features for the EduVault marketplace, including contract pause/unpause functionality, geolocation-based tax estimation, and verification of existing multi-destination payout and platform fee collection features.
+This PR implements critical operational safety and compliance features for the ScholarMarket marketplace, including contract pause/unpause functionality, geolocation-based tax estimation, and verification of existing multi-destination payout and platform fee collection features.
 
 ## Changes
 

@@ -39,7 +39,7 @@ export default function TopSharedMaterials() {
             Top Shared Materials
           </h2>
           <p className="text-edu-muted text-lg">
-            Discover what is trending in the EduVault community this week.
+            Discover what is trending in the ScholarMarket community this week.
           </p>
         </div>
         <Link 

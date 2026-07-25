@@ -1,17 +1,17 @@
 openapi: "3.1.0"
 
 info:
-  title: EduVault API
+  title: ScholarMarket API
   version: "1.0.0"
   description: |
-    REST API for the EduVault decentralised learning-material marketplace.
+    REST API for the ScholarMarket decentralised learning-material marketplace.
     All write endpoints require a valid `auth_token` cookie issued by the
     `/api/auth` login flow (HS256 JWT signed with `JWT_SECRET`).
 
 servers:
   - url: "http://localhost:3000"
     description: Local development
-  - url: "https://eduvault.vercel.app"
+  - url: "https://scholarmarket.vercel.app"
     description: Production (Vercel)
 
 components:

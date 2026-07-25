@@ -1,6 +1,6 @@
-# EduVault Architecture
+# ScholarMarket Architecture
 
-This document shows the high-level data and payment flow for EduVault.
+This document shows the high-level data and payment flow for ScholarMarket.
 
 ## Publishing Flow (Creator)
 
@@ -50,11 +50,11 @@ sequenceDiagram
 - IPFS/Pinata: authoritative for file bytes and pinned metadata content
 
 Link: see `scripts/run-stellar-indexer.mjs` and `scripts/reprocess-deadletter.mjs` for operational commands.
-# EduVault Architecture
+# ScholarMarket Architecture
 
 ## 1. System Goals
 
-EduVault needs to do four things reliably:
+ScholarMarket needs to do four things reliably:
 
 - ingest and catalog educational materials
 - process low-cost purchases
@@ -86,7 +86,7 @@ EduVault needs to do four things reliably:
 ### Prototype chain layer
 
 - EVM wallet connection via wagmi and RainbowKit
-- archived ERC-721 proof of concept in `archive/legacy-evm/contracts/EduVault.sol`
+- archived ERC-721 proof of concept in `archive/legacy-evm/contracts/ScholarMarket.sol`
 
 ## 3. Target Stellar-Native Architecture
 
@@ -186,6 +186,6 @@ The canonical Soroban contract boundary and event model are documented in [`docs
 
 ## 8. Design Principle
 
-The chain should secure settlement and rights. The web application should optimize search, onboarding, and delivery. EduVault does not need to put files on-chain to benefit from Stellar.
+The chain should secure settlement and rights. The web application should optimize search, onboarding, and delivery. ScholarMarket does not need to put files on-chain to benefit from Stellar.
 
 For the detailed storage model, invariants, accepted-asset rules, and event contract, use [`docs/soroban-contract-architecture.md`](soroban-contract-architecture.md) as the implementation reference.

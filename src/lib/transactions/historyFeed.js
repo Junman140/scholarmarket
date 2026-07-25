@@ -5,10 +5,10 @@ const HORIZON_BASE_URL =
     : "https://horizon-testnet.stellar.org";
 
 function getCacheStore() {
-  if (!globalThis.__eduvaultHistoryCache) {
-    globalThis.__eduvaultHistoryCache = new Map();
+  if (!globalThis.__scholarmarketHistoryCache) {
+    globalThis.__scholarmarketHistoryCache = new Map();
   }
-  return globalThis.__eduvaultHistoryCache;
+  return globalThis.__scholarmarketHistoryCache;
 }
 
 function readCache(key, now = Date.now()) {

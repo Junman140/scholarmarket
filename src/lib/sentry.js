@@ -1,5 +1,5 @@
 /**
- * Sentry integration for EduVault (#82).
+ * Sentry integration for ScholarMarket (#82).
  *
  * Wraps the @sentry/nextjs package with a thin layer that:
  *  - Is a no-op when SENTRY_DSN is not configured (safe for local dev / CI).

@@ -1,12 +1,12 @@
 services:
   mongodb:
     image: mongo:7
-    container_name: eduvault-mongodb
+    container_name: scholarmarket-mongodb
     restart: unless-stopped
     ports:
       - "27017:27017"
     environment:
-      MONGO_INITDB_DATABASE: eduvault
+      MONGO_INITDB_DATABASE: scholarmarket
     volumes:
       - mongodb-data:/data/db
 

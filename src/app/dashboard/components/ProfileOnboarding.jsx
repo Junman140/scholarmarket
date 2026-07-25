@@ -55,7 +55,7 @@ export default function ProfileOnboarding() {
       } else {
         await createProfile.mutateAsync({
           fullName: formData.fullName,
-          email: profile?.email || `${address.toLowerCase()}@eduvault.user`,
+          email: profile?.email || `${address.toLowerCase()}@scholarmarket.user`,
           walletAddress: address,
           bio: formData.bio,
           avatarUrl: formData.avatarUrl,

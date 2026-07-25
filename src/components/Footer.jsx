@@ -15,20 +15,20 @@ export default function Footer() {
 							<div className="relative w-10 h-10 rounded-full overflow-hidden border border-white/10 group-hover:border-stellar-blue transition-colors">
 								<Image
 									src="/logo.png"
-									alt="EduVault Logo"
+									alt="ScholarMarket Logo"
 									fill
 									className="object-cover"
 								/>
 							</div>
 							<div className="text-2xl font-bold tracking-tight text-white">
-								EduVault<span className="text-stellar-blue">.</span>
+								ScholarMarket<span className="text-stellar-blue">.</span>
 							</div>
 						</Link>
 						<p className="text-sm leading-relaxed mb-8 text-gray-500">
 							The global knowledge commons powered by Stellar. Empowering students and researchers to own and monetize their academic contributions securely.
 						</p>
 						<div className="flex items-center gap-4 text-gray-500">
-							<a href="https://x.com/eduvault1" target="_blank" className="hover:text-stellar-blue transition-colors p-2 bg-white/5 rounded-lg">
+							<a href="https://x.com/scholarmarket1" target="_blank" className="hover:text-stellar-blue transition-colors p-2 bg-white/5 rounded-lg">
 								<FaXTwitter size={18} />
 							</a>
 							<Link href="#" className="hover:text-stellar-blue transition-colors p-2 bg-white/5 rounded-lg">
@@ -76,7 +76,7 @@ export default function Footer() {
 				</div>
 
 				<div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-widest text-gray-600">
-					<p>© {new Date().getFullYear()} EDUVAULT. BUILT ON STELLAR.</p>
+					<p>© {new Date().getFullYear()} SCHOLARMARKET. BUILT ON STELLAR.</p>
 					<div className="flex gap-8">
 						<Link href="#" className="hover:text-white transition">Privacy Policy</Link>
 						<Link href="#" className="hover:text-white transition">Cookies</Link>

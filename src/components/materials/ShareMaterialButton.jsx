@@ -8,13 +8,13 @@ export default function ShareMaterialButton({ material, className = "" }) {
 
   const handleShare = async () => {
     const url = typeof window !== "undefined" ? window.location.href : "";
-    const shareText = `Check out "${material.title}" on EduVault!\n${url}`;
+    const shareText = `Check out "${material.title}" on ScholarMarket!\n${url}`;
 
     try {
       if (navigator.share) {
         await navigator.share({
           title: material.title,
-          text: `Check out "${material.title}" on EduVault!`,
+          text: `Check out "${material.title}" on ScholarMarket!`,
           url: url,
         });
       } else {

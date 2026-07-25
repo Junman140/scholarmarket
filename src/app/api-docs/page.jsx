@@ -20,7 +20,7 @@ export default function ApiDocsPage() {
   return (
     <div style={{ padding: "1rem", maxWidth: "1400px", margin: "0 auto" }}>
       <div style={{ marginBottom: "1rem" }}>
-        <h1 style={{ fontSize: "2rem", fontWeight: 700, marginBottom: "0.35rem" }}>EduVault API docs</h1>
+        <h1 style={{ fontSize: "2rem", fontWeight: 700, marginBottom: "0.35rem" }}>ScholarMarket API docs</h1>
         <p style={{ color: "#475569" }}>
           Canonical reference for creator materials, purchase history, entitlements, and profile update flows.
         </p>

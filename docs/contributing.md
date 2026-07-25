@@ -1,6 +1,6 @@
 # Contribution Guide
 
-Thank you for improving EduVault. This guide explains how to prepare changes that are easy to review and safe to merge.
+Thank you for improving ScholarMarket. This guide explains how to prepare changes that are easy to review and safe to merge.
 
 ## Development Workflow
 

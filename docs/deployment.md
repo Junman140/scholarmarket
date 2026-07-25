@@ -1,6 +1,6 @@
-# EduVault Deployment Guide
+# ScholarMarket Deployment Guide
 
-Step-by-step instructions for deploying the full EduVault stack (Next.js frontend + API, MongoDB, and Soroban smart contracts) from scratch.
+Step-by-step instructions for deploying the full ScholarMarket stack (Next.js frontend + API, MongoDB, and Soroban smart contracts) from scratch.
 
 ---
 
@@ -36,7 +36,7 @@ cp .env.example .env.local
 | Variable | Description |
 |---|---|
 | `MONGODB_URI` | Full MongoDB connection string |
-| `MONGODB_DB` | Database name (default `eduvault`) |
+| `MONGODB_DB` | Database name (default `scholarmarket`) |
 | `JWT_SECRET` | ≥ 32 random bytes — used to sign auth tokens |
 | `NEXT_PUBLIC_APP_URL` | Public URL of the deployed app |
 | `PINATA_JWT` | Pinata API key for IPFS uploads |
@@ -163,14 +163,14 @@ stellar contract invoke \
 
 1. Push your fork to GitHub.
 2. Open [vercel.com/new](https://vercel.com/new) → **Import Git Repository**.
-3. Select the `eduvault` repository.
+3. Select the `scholarmarket` repository.
 4. Set **Framework Preset** to **Next.js**.
 
 ### 4b. Configure environment variables
 
 In the Vercel dashboard → **Settings → Environment Variables**, add every entry from the table in Section 1 above.
 
-Set `NEXT_PUBLIC_APP_URL` to your Vercel deployment URL (e.g., `https://eduvault.vercel.app`).
+Set `NEXT_PUBLIC_APP_URL` to your Vercel deployment URL (e.g., `https://scholarmarket.vercel.app`).
 
 ### 4c. Deploy
 
@@ -217,7 +217,7 @@ node scripts/backup-mongodb.mjs
 
 ```bash
 # Download the archive from S3
-aws s3 cp s3://<BACKUP_S3_BUCKET>/backups/YYYY-MM/eduvault-backup-<TIMESTAMP>.gz ./restore.gz
+aws s3 cp s3://<BACKUP_S3_BUCKET>/backups/YYYY-MM/scholarmarket-backup-<TIMESTAMP>.gz ./restore.gz
 
 # Restore (will overwrite existing collections)
 mongorestore \

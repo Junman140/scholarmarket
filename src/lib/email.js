@@ -33,16 +33,16 @@ function createTransporter() {
 }
 
 export async function sendWelcomeEmail(to, name) {
-  const defaultFrom = process.env.EMAIL_USER || "no-reply@eduvault.local";
+  const defaultFrom = process.env.EMAIL_USER || "no-reply@scholarmarket.local";
   const from = process.env.EMAIL_FROM || defaultFrom;
   const transporter = createTransporter();
 
-  const subject = `Welcome to EduVault, ${name}!`;
+  const subject = `Welcome to ScholarMarket, ${name}!`;
 
   const appUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
   const dashboardUrl = `${appUrl}/dashboard`;
 
-  const text = `Hi ${name},\n\nWelcome to EduVault! Your student profile has been created.\n\nHead to your dashboard to start exploring, upload study materials, and share to earn.\n\nDashboard: ${dashboardUrl}\n\nCheers,\nEduVault Team`;
+  const text = `Hi ${name},\n\nWelcome to ScholarMarket! Your student profile has been created.\n\nHead to your dashboard to start exploring, upload study materials, and share to earn.\n\nDashboard: ${dashboardUrl}\n\nCheers,\nScholarMarket Team`;
 
   const html = `
   <!doctype html>
@@ -50,7 +50,7 @@ export async function sendWelcomeEmail(to, name) {
     <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>Welcome to EduVault</title>
+      <title>Welcome to ScholarMarket</title>
       <style>
         /* Email-safe inline styles are applied via attributes; minimal resets here */
         @media (prefers-color-scheme: dark) {
@@ -68,8 +68,8 @@ export async function sendWelcomeEmail(to, name) {
               <tr>
                 <td style="padding:0 0 12px 0;" align="center">
                   <a href="${appUrl}" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px;color:#111827;">
-                    <img src="${appUrl}/images/stellar.png" width="36" height="36" alt="EduVault" style="border:0;display:block;" />
-                    <span style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,'Apple Color Emoji','Segoe UI Emoji';font-weight:700;font-size:18px;">EduVault</span>
+                    <img src="${appUrl}/images/stellar.png" width="36" height="36" alt="ScholarMarket" style="border:0;display:block;" />
+                    <span style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,'Apple Color Emoji','Segoe UI Emoji';font-weight:700;font-size:18px;">ScholarMarket</span>
                   </a>
                 </td>
               </tr>
@@ -79,7 +79,7 @@ export async function sendWelcomeEmail(to, name) {
                     <tr>
                       <td style="padding:24px 24px 8px 24px;">
                         <h1 style="margin:0 0 8px 0;font-size:22px;line-height:1.3;color:#111827;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,'Apple Color Emoji','Segoe UI Emoji';">
-                          Welcome to EduVault, ${name}!
+                          Welcome to ScholarMarket, ${name}!
                         </h1>
                         <p class="muted" style="margin:0 0 16px 0;font-size:14px;line-height:1.6;color:#6b7280;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,'Apple Color Emoji','Segoe UI Emoji';">
                           Your student profile is ready. Explore your dashboard to discover resources, upload materials, and start sharing to earn.
@@ -100,10 +100,10 @@ export async function sendWelcomeEmail(to, name) {
               <tr>
                 <td align="center" style="padding:16px 8px 0 8px;">
                   <p class="muted" style="margin:0 0 8px 0;font-size:12px;color:#6b7280;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,'Apple Color Emoji','Segoe UI Emoji';">
-                    You’re receiving this because you created a profile on EduVault.
+                    You’re receiving this because you created a profile on ScholarMarket.
                   </p>
                   <p class="muted" style="margin:0 0 24px 0;font-size:12px;color:#6b7280;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,'Apple Color Emoji','Segoe UI Emoji';">
-                    © ${new Date().getFullYear()} EduVault
+                    © ${new Date().getFullYear()} ScholarMarket
                   </p>
                 </td>
               </tr>
@@ -123,7 +123,7 @@ export async function verifyEmailConnection() {
 }
 
 export async function sendPurchaseReceiptEmail(to, purchase, material) {
-  const defaultFrom = process.env.EMAIL_USER || "no-reply@eduvault.local";
+  const defaultFrom = process.env.EMAIL_USER || "no-reply@scholarmarket.local";
   const from = process.env.EMAIL_FROM || defaultFrom;
   const transporter = createTransporter();
 
@@ -138,7 +138,7 @@ export async function sendPurchaseReceiptEmail(to, purchase, material) {
   const appUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
   const downloadUrl = `${appUrl}/dashboard/my-materials`;
 
-  const text = `Hi,\n\nThank you for your purchase on EduVault!\n\nHere is your receipt:\n- Material: ${title}\n- Amount: ${amount} ${asset}\n- Purchase ID: ${purchaseId}\n- Date: ${dateStr}\n\nYou can access and download your purchased material from your dashboard:\n${downloadUrl}\n\nCheers,\nEduVault Team`;
+  const text = `Hi,\n\nThank you for your purchase on ScholarMarket!\n\nHere is your receipt:\n- Material: ${title}\n- Amount: ${amount} ${asset}\n- Purchase ID: ${purchaseId}\n- Date: ${dateStr}\n\nYou can access and download your purchased material from your dashboard:\n${downloadUrl}\n\nCheers,\nScholarMarket Team`;
 
   const html = `
   <!doctype html>
@@ -150,7 +150,7 @@ export async function sendPurchaseReceiptEmail(to, purchase, material) {
     <body style="margin:0;padding:0;background:#f6f9fc;font-family:sans-serif;">
       <div style="max-width:600px;margin:20px auto;padding:20px;background:#ffffff;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.06);">
         <h1 style="color:#111827;font-size:22px;margin-bottom:20px;font-family:-apple-system,BlinkMacSystemFont,sans-serif;">Purchase Receipt</h1>
-        <p style="font-size:14px;color:#4b5563;line-height:1.5;">Thank you for your purchase on EduVault!</p>
+        <p style="font-size:14px;color:#4b5563;line-height:1.5;">Thank you for your purchase on ScholarMarket!</p>
         <table style="width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;">
           <tr style="border-bottom:1px solid #e5e7eb;">
             <td style="padding:10px 0;font-weight:bold;color:#4b5563;">Material:</td>
@@ -172,7 +172,7 @@ export async function sendPurchaseReceiptEmail(to, purchase, material) {
         <div style="margin:30px 0;text-align:center;">
           <a href="${downloadUrl}" style="background:#2563eb;color:#ffffff;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:bold;display:inline-block;font-size:14px;">Access Purchased Material</a>
         </div>
-        <p style="color:#9ca3af;font-size:12px;text-align:center;margin-top:20px;">© ${new Date().getFullYear()} EduVault</p>
+        <p style="color:#9ca3af;font-size:12px;text-align:center;margin-top:20px;">© ${new Date().getFullYear()} ScholarMarket</p>
       </div>
     </body>
   </html>`;

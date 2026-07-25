@@ -68,7 +68,7 @@ function requireEnv(name) {
 const MONGODB_URI = requireEnv('MONGODB_URI')
 const DB_NAME = process.env.MONGODB_DB
   || (() => { try { return new URL(MONGODB_URI.replace(/\?.*$/, '')).pathname.replace(/^\//, '') } catch { return '' } })()
-  || 'eduvault'
+  || 'scholarmarket'
 
 // Collections that must be present in the dump for it to be considered valid
 const REQUIRED_COLLECTIONS = ['users', 'materials', 'purchases']
@@ -84,7 +84,7 @@ function resolveArchivePath(cliArg) {
   let files
   try {
     files = readdirSync(dir)
-      .filter(f => f.startsWith('eduvault-backup-') && f.endsWith('.gz'))
+      .filter(f => f.startsWith('scholarmarket-backup-') && f.endsWith('.gz'))
       .map(f => ({ name: f, mtime: statSync(join(dir, f)).mtimeMs }))
       .sort((a, b) => b.mtime - a.mtime)
   } catch (err) {
@@ -104,7 +104,7 @@ function resolveArchivePath(cliArg) {
 // Temp dir management
 // ---------------------------------------------------------------------------
 function createTempDir() {
-  return mkdtempSync(join(tmpdir(), 'eduvault-verify-'))
+  return mkdtempSync(join(tmpdir(), 'scholarmarket-verify-'))
 }
 
 function removeTempDir(dir) {
@@ -210,7 +210,7 @@ async function sendFailureAlert(archivePath, reason) {
     const smtpPort = Number(process.env.SMTP_PORT || 0)
     const smtpUser = process.env.SMTP_USER || process.env.EMAIL_USER
     const smtpPass = process.env.SMTP_PASS || process.env.EMAIL_PASS
-    const from = process.env.EMAIL_FROM || smtpUser || 'no-reply@eduvault.local'
+    const from = process.env.EMAIL_FROM || smtpUser || 'no-reply@scholarmarket.local'
 
     let transport
     if (smtpHost) {
@@ -223,9 +223,9 @@ async function sendFailureAlert(archivePath, reason) {
       return
     }
 
-    const subject = `[EduVault] Backup verification FAILED — ${basename(archivePath)}`
+    const subject = `[ScholarMarket] Backup verification FAILED — ${basename(archivePath)}`
     const text = [
-      'EduVault backup verification failed.',
+      'ScholarMarket backup verification failed.',
       '',
       `Archive  : ${archivePath}`,
       `Reason   : ${reason}`,
@@ -246,7 +246,7 @@ async function sendFailureAlert(archivePath, reason) {
 // ---------------------------------------------------------------------------
 ;(async () => {
   const archivePath = resolveArchivePath(process.argv[2])
-  log('info', 'EduVault backup verification started', { archive: archivePath })
+  log('info', 'ScholarMarket backup verification started', { archive: archivePath })
 
   const tempDir = createTempDir()
   const checks = []

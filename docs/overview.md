@@ -1,8 +1,8 @@
-# EduVault Overview
+# ScholarMarket Overview
 
 ## Product Thesis
 
-EduVault is building a rights-aware marketplace for educational materials. The product is designed for educators, tutors, student creators, and learning communities that need a better way to publish, discover, pay for, and verify access to academic resources.
+ScholarMarket is building a rights-aware marketplace for educational materials. The product is designed for educators, tutors, student creators, and learning communities that need a better way to publish, discover, pay for, and verify access to academic resources.
 
 ## Target Users
 
@@ -44,7 +44,7 @@ The next product milestone is to move the commercial logic onto Stellar:
 
 ## Why Stellar
 
-EduVault is a better fit for Stellar than a generic NFT marketplace model because the commercial need is payment-centric. The core challenge is not collectible scarcity. It is low-cost settlement, verifiable access, and cross-border usability for educational commerce.
+ScholarMarket is a better fit for Stellar than a generic NFT marketplace model because the commercial need is payment-centric. The core challenge is not collectible scarcity. It is low-cost settlement, verifiable access, and cross-border usability for educational commerce.
 
 Stellar provides:
 
@@ -55,7 +55,7 @@ Stellar provides:
 
 ## Ecosystem Value
 
-EduVault can contribute useful transaction volume to Stellar in a category with long-term demand: learning and upskilling. It also creates a practical open-source reference for digital content licensing on Stellar instead of another purely financial dashboard or speculative token flow.
+ScholarMarket can contribute useful transaction volume to Stellar in a category with long-term demand: learning and upskilling. It also creates a practical open-source reference for digital content licensing on Stellar instead of another purely financial dashboard or speculative token flow.
 
 ## Delivery Principle
 

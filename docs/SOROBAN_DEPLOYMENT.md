@@ -69,16 +69,16 @@ Create or use an existing Soroban CLI identity:
 
 ```bash
 # Create a new identity
-soroban config identity generate --global eduvault-deployer
+soroban config identity generate --global scholarmarket-deployer
 
 # Or use an existing one
-soroban config identity use --global eduvault-deployer
+soroban config identity use --global scholarmarket-deployer
 ```
 
 Fund your identity with testnet lumens:
 ```bash
 # Get your public key
-soroban config identity show --global eduvault-deployer
+soroban config identity show --global scholarmarket-deployer
 
 # Visit https://friendbot.stellar.org/?addr=<YOUR_PUBLIC_KEY> to fund it
 ```
@@ -90,7 +90,7 @@ Deploy the optimized contract to Stellar Testnet:
 ```bash
 soroban contract deploy \
   --wasm material_registry_optimized.wasm \
-  --source eduvault-deployer \
+  --source scholarmarket-deployer \
   --network testnet
 ```
 
@@ -151,7 +151,7 @@ pub fn register_material(
 ```bash
 soroban contract invoke \
   --id CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB5C \
-  --source eduvault-deployer \
+  --source scholarmarket-deployer \
   --network testnet \
   -- \
   register_material \
@@ -360,11 +360,11 @@ To deploy to Stellar Mainnet:
 - [Soroban Documentation](https://developers.stellar.org/learn/soroban)
 - [Stellar Testnet](https://stellar.expert/explorer/testnet/)
 - [Soroban CLI Reference](https://developers.stellar.org/tools/soroban-cli)
-- [EduVault Documentation](./backend-contracts.md)
+- [ScholarMarket Documentation](./backend-contracts.md)
 
 ## Support
 
 For issues or questions about the MaterialRegistry contract, please:
 1. Check the troubleshooting section above
 2. Review contract tests in `soroban/contracts/material-registry/src/test.rs`
-3. Open an issue in the EduVault repository
+3. Open an issue in the ScholarMarket repository

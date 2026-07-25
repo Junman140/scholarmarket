@@ -10,7 +10,7 @@
  *
  * Environment variables:
  *   MONGODB_URI   — required; MongoDB connection string
- *   MONGODB_DB    — optional; database name (default: "eduvault")
+ *   MONGODB_DB    — optional; database name (default: "scholarmarket")
  *   DRY_RUN       — optional; set to "true" to log matches without deleting
  *   STALE_HOURS   — optional; hours before a pending intent is considered stale (default: 2)
  */
@@ -23,7 +23,7 @@ const require = createRequire(import.meta.url);
 // ── Config ────────────────────────────────────────────────────────────────────
 
 const MONGODB_URI = process.env.MONGODB_URI;
-const MONGODB_DB = process.env.MONGODB_DB || "eduvault";
+const MONGODB_DB = process.env.MONGODB_DB || "scholarmarket";
 const DRY_RUN = process.env.DRY_RUN === "true";
 const STALE_HOURS = Number(process.env.STALE_HOURS ?? "2");
 const COLLECTION = "checkout_intents";

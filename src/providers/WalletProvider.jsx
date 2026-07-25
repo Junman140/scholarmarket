@@ -26,7 +26,7 @@ export const WalletStatus = Object.freeze({
 
 export const WalletContext = createContext(null);
 
-const SESSION_STORAGE_KEY = 'eduvault.wallet.session.v1';
+const SESSION_STORAGE_KEY = 'scholarmarket.wallet.session.v1';
 const SESSION_TTL_MS = 1000 * 60 * 60 * 24;
 
 export function WalletProvider({ children }) {

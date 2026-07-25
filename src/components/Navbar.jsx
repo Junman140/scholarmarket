@@ -66,13 +66,13 @@ export default function Navbar() {
 					<div className="relative w-9 h-9 rounded-full overflow-hidden border-2 border-stellar-blue/20 group-hover:border-stellar-blue/50 transition-colors">
 						<Image
 							src="/logo.png"
-							alt="EduVault Logo"
+							alt="ScholarMarket Logo"
 							fill
 							className="object-cover"
 						/>
 					</div>
 					<div className="text-xl font-bold tracking-tight text-stellar-dark">
-						EduVault<span className="text-stellar-blue">.</span>
+						ScholarMarket<span className="text-stellar-blue">.</span>
 					</div>
 				</Link>
 

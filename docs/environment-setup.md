@@ -1,6 +1,6 @@
 # Environment Setup
 
-This guide describes the local setup required to run EduVault and test the main marketplace workflows.
+This guide describes the local setup required to run ScholarMarket and test the main marketplace workflows.
 
 ## Prerequisites
 

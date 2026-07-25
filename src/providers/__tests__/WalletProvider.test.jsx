@@ -54,7 +54,7 @@ import { WalletProvider } from "../WalletProvider";
 import { useWallet } from "@/hooks/useWallet";
 import { NETWORK_PASSPHRASE } from "@/lib/wallet/kit";
 
-const SESSION_STORAGE_KEY = "eduvault.wallet.session.v1";
+const SESSION_STORAGE_KEY = "scholarmarket.wallet.session.v1";
 
 function Harness() {
   const { state, connect, disconnect } = useWallet();

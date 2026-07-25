@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Backup restore verification for EduVault (#377).
+ * Backup restore verification for ScholarMarket (#377).
  *
  * Validates a mongodump archive before it is applied to a production database:
  *  1. Confirms the archive is well-formed with a mongorestore dry-run.
@@ -21,7 +21,7 @@
  *   MONGODB_URI  — connection string for the database to validate
  *
  * Optional env vars:
- *   MONGODB_DB   — database name to validate (default: eduvault)
+ *   MONGODB_DB   — database name to validate (default: scholarmarket)
  */
 
 import { execFile } from "node:child_process";
@@ -51,7 +51,7 @@ function requireEnv(name) {
 }
 
 const MONGODB_URI = requireEnv("MONGODB_URI");
-const DB_NAME = process.env.MONGODB_DB || "eduvault";
+const DB_NAME = process.env.MONGODB_DB || "scholarmarket";
 const archivePath = process.argv[2];
 
 // ---------------------------------------------------------------------------
@@ -156,7 +156,7 @@ async function validateCollectionSchemas(mongoClient) {
     process.exit(1);
   }
 
-  log("info", "EduVault restore verification started", { archive: archivePath, db: DB_NAME });
+  log("info", "ScholarMarket restore verification started", { archive: archivePath, db: DB_NAME });
 
   await validateArchiveStructure(archivePath);
 

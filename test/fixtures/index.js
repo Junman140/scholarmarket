@@ -2,13 +2,13 @@ export const users = {
     creator: {
         _id: "user_creator_1",
         walletAddress: "0xCreatorWalletAddress1234567890",
-        email: "creator@eduvault.test",
+        email: "creator@scholarmarket.test",
         fullName: "Alice Educator",
     },
     buyer: {
         _id: "user_buyer_1",
         walletAddress: "0xBuyerWalletAddress0987654321",
-        email: "buyer@eduvault.test",
+        email: "buyer@scholarmarket.test",
         fullName: "Bob Student",
     }
 };
@@ -23,7 +23,7 @@ export const materials = {
         status: "draft",
         price: "10",
         asset: "XLM",
-        storageKey: "https://eduvault.test/files/draft.pdf",
+        storageKey: "https://scholarmarket.test/files/draft.pdf",
     },
     published: {
         _id: "mat_pub_456",

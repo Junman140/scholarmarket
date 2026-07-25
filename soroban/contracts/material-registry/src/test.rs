@@ -18,7 +18,7 @@ fn bytes32(env: &Env, value: u8) -> BytesN<32> {
 }
 
 fn metadata_uri(env: &Env) -> String {
-    String::from_str(env, "ipfs://eduvault/material/intro-to-soroban")
+    String::from_str(env, "ipfs://scholarmarket/material/intro-to-soroban")
 }
 
 fn default_quotes(env: &Env) -> Vec<AssetQuote> {

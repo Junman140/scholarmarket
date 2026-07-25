@@ -4,7 +4,7 @@ export function createStatsEmbed(stats) {
   return {
     embeds: [
       {
-        title: 'EduVault Daily Stats',
+        title: 'ScholarMarket Daily Stats',
         color: 0x00bfff,
         timestamp: new Date().toISOString(),
         fields: [
@@ -30,7 +30,7 @@ export function createStatsEmbed(stats) {
           },
         ],
         footer: {
-          text: 'EduVault Platform Statistics',
+          text: 'ScholarMarket Platform Statistics',
         },
       },
     ],

@@ -118,7 +118,7 @@ export default function OnboardingPage() {
                 <FaRocket />
               </motion.div>
               <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
-                Welcome to EduVault
+                Welcome to ScholarMarket
               </h1>
               <p className="text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">
                 Set up your creator profile in a few simple steps. Connect your
@@ -173,7 +173,7 @@ export default function OnboardingPage() {
                 <FaUser />
               </div>
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-                How will you use EduVault?
+                How will you use ScholarMarket?
               </h2>
               <p className="text-gray-500">
                 We&apos;ll customize your experience based on your role.
@@ -556,7 +556,7 @@ export default function OnboardingPage() {
               </h2>
               <p className="text-gray-500 leading-relaxed">
                 Learn how to publish and manage your educational materials on
-                EduVault.
+                ScholarMarket.
               </p>
             </div>
 
@@ -617,7 +617,7 @@ export default function OnboardingPage() {
                   : "Creator Attribution"}
               </h2>
               <p className="text-gray-500 leading-relaxed">
-                Every material you upload to EduVault is permanently linked to
+                Every material you upload to ScholarMarket is permanently linked to
                 your identity through your wallet address and display name.
               </p>
             </div>
@@ -738,7 +738,7 @@ export default function OnboardingPage() {
                       "Failed to create your profile. Please try again."
                     : accountType === "institution"
                       ? "Your institution is ready. Start managing cohorts and materials."
-                      : "Your creator profile is ready. Start uploading materials and build your reputation on EduVault."}
+                      : "Your creator profile is ready. Start uploading materials and build your reputation on ScholarMarket."}
               </p>
             </div>
 

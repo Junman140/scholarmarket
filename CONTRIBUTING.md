@@ -1,10 +1,10 @@
-# Contributing to EduVault
+# Contributing to ScholarMarket
 
 Thanks for contributing.
 
 ## Scope
 
-EduVault is an in-development educational content marketplace with a current web prototype and a planned Stellar-native settlement layer. Contributions should improve one of these areas:
+ScholarMarket is an in-development educational content marketplace with a current web prototype and a planned Stellar-native settlement layer. Contributions should improve one of these areas:
 
 - product clarity
 - security

@@ -197,7 +197,7 @@ export default function CheckoutReceiptModal({
                     <FaReceipt className="text-blue-600" /> Transaction receipt
                   </div>
                   <div className="space-y-3">
-                    <ReceiptRow label="Item name">{itemName || "EduVault learning material"}</ReceiptRow>
+                    <ReceiptRow label="Item name">{itemName || "ScholarMarket learning material"}</ReceiptRow>
                     <ReceiptRow label="Transaction hash">
                       {explorerUrl && transactionHash ? (
                         <a

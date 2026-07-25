@@ -2,7 +2,7 @@
 
 ## Summary
 
-EduVault currently includes an EVM-based wallet and contract prototype. That implementation was useful for validating user flows, but it is not the intended long-term blockchain direction for the Drip Wave submission.
+ScholarMarket currently includes an EVM-based wallet and contract prototype. That implementation was useful for validating user flows, but it is not the intended long-term blockchain direction for the Drip Wave submission.
 
 The strategic direction for this project is Stellar-native settlement and entitlement logic built on Soroban.
 
@@ -11,7 +11,7 @@ The strategic direction for this project is Stellar-native settlement and entitl
 - wallet connection flow in the frontend
 - wallet-linked profile creation
 - upload flow that pins files and metadata to IPFS
-- archived ERC-721 ownership experiment in `archive/legacy-evm/contracts/EduVault.sol`
+- archived ERC-721 ownership experiment in `archive/legacy-evm/contracts/ScholarMarket.sol`
 - marketplace and purchase UI prototypes
 
 ## Why the Current Chain Layer Is Not Final
@@ -58,7 +58,7 @@ File storage, metadata flow, dashboard UX, and catalog search can be retained wi
 
 ## Documentation Rule
 
-When discussing EduVault externally:
+When discussing ScholarMarket externally:
 
 - describe the current repository as a working prototype
 - describe Stellar payments and Soroban contracts as the next implementation milestone

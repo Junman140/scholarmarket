@@ -1,10 +1,10 @@
-# Soroban Upgrade Pattern (EduVault)
+# Soroban Upgrade Pattern (ScholarMarket)
 
-This document defines the upgrade strategy used by EduVault Soroban contracts.
+This document defines the upgrade strategy used by ScholarMarket Soroban contracts.
 
 ## Pattern Selected
 
-EduVault uses **admin-gated Wasm hash replacement** through:
+ScholarMarket uses **admin-gated Wasm hash replacement** through:
 
 - `env.deployer().update_current_contract_wasm(new_wasm_hash)`
 

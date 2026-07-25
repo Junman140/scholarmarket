@@ -132,8 +132,8 @@ export async function getDb() {
   try {
     const client = await getClientPromise();
     // When DB name is in connection string, driver selects it automatically.
-    // Otherwise, fallback to "eduvault".
-    const dbName = process.env.MONGODB_DB || "eduvault";
+    // Otherwise, fallback to "scholarmarket".
+    const dbName = process.env.MONGODB_DB || "scholarmarket";
     const db = client.db(dbName);
 
     if (!indexesCreated) {

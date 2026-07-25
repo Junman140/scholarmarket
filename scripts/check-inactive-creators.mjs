@@ -13,7 +13,7 @@
  *
  * Environment variables:
  *   MONGODB_URI            — required; MongoDB connection string
- *   MONGODB_DB             — optional; database name (default: "eduvault")
+ *   MONGODB_DB             — optional; database name (default: "scholarmarket")
  *   DRY_RUN                — optional; "true" to log matches without mutating
  *   INACTIVE_THRESHOLD_DAYS — optional; days before a profile is inactive (default: 180)
  *   SKIP_EMAIL             — optional; "true" to skip sending reminder emails
@@ -26,7 +26,7 @@ import { sendInactivityReminder } from "../src/lib/email/inactivityReminder.js";
 // ── Config ────────────────────────────────────────────────────────────────────
 
 const MONGODB_URI = process.env.MONGODB_URI;
-const MONGODB_DB = process.env.MONGODB_DB || "eduvault";
+const MONGODB_DB = process.env.MONGODB_DB || "scholarmarket";
 const DRY_RUN = process.env.DRY_RUN === "true";
 const SKIP_EMAIL = process.env.SKIP_EMAIL === "true";
 const INACTIVE_THRESHOLD_DAYS = Number(process.env.INACTIVE_THRESHOLD_DAYS ?? "180");

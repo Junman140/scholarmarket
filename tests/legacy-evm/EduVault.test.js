@@ -1,11 +1,11 @@
 const assert = require("node:assert/strict");
 const { ethers } = require("hardhat");
 
-describe("EduVault (archived legacy EVM prototype)", function () {
+describe("ScholarMarket (archived legacy EVM prototype)", function () {
   async function deployVault() {
     const [creator, buyer, receiver, ...others] = await ethers.getSigners();
-    const EduVault = await ethers.getContractFactory("EduVault");
-    const vault = await EduVault.deploy();
+    const ScholarMarket = await ethers.getContractFactory("ScholarMarket");
+    const vault = await ScholarMarket.deploy();
     await vault.waitForDeployment();
 
     return { buyer, creator, others, receiver, vault };
@@ -18,7 +18,7 @@ describe("EduVault (archived legacy EVM prototype)", function () {
   describe("minting", function () {
     it("mints a token and stores its tokenURI", async function () {
       const { creator, vault } = await deployVault();
-      const uri = "ipfs://eduvault/material-1";
+      const uri = "ipfs://scholarmarket/material-1";
 
       await vault.connect(creator).mint(uri);
 
@@ -30,9 +30,9 @@ describe("EduVault (archived legacy EVM prototype)", function () {
     it("mints multiple tokens with sequential IDs", async function () {
       const { creator, vault } = await deployVault();
 
-      await vault.connect(creator).mint("ipfs://eduvault/material-1");
-      await vault.connect(creator).mint("ipfs://eduvault/material-2");
-      await vault.connect(creator).mint("ipfs://eduvault/material-3");
+      await vault.connect(creator).mint("ipfs://scholarmarket/material-1");
+      await vault.connect(creator).mint("ipfs://scholarmarket/material-2");
+      await vault.connect(creator).mint("ipfs://scholarmarket/material-3");
 
       assert.equal(await vault.ownerOf(0), creator.address);
       assert.equal(await vault.ownerOf(1), creator.address);
@@ -47,8 +47,8 @@ describe("EduVault (archived legacy EVM prototype)", function () {
     it("allows different users to mint independently", async function () {
       const { creator, buyer, vault } = await deployVault();
 
-      await vault.connect(creator).mint("ipfs://eduvault/material-1");
-      await vault.connect(buyer).mint("ipfs://eduvault/material-2");
+      await vault.connect(creator).mint("ipfs://scholarmarket/material-1");
+      await vault.connect(buyer).mint("ipfs://scholarmarket/material-2");
 
       assert.equal(await vault.ownerOf(0), creator.address);
       assert.equal(await vault.ownerOf(1), buyer.address);
@@ -61,7 +61,7 @@ describe("EduVault (archived legacy EVM prototype)", function () {
     it("updates owner token enumeration after transfers", async function () {
       const { buyer, creator, vault } = await deployVault();
 
-      await vault.connect(creator).mint("ipfs://eduvault/material-1");
+      await vault.connect(creator).mint("ipfs://scholarmarket/material-1");
       await vault.connect(creator).transferFrom(creator.address, buyer.address, 0);
 
       assert.deepEqual(tokenIds(await vault.tokensOfOwner(creator.address)), []);
@@ -72,7 +72,7 @@ describe("EduVault (archived legacy EVM prototype)", function () {
     it("handles repeated transfers correctly", async function () {
       const { buyer, creator, receiver, vault } = await deployVault();
 
-      await vault.connect(creator).mint("ipfs://eduvault/material-1");
+      await vault.connect(creator).mint("ipfs://scholarmarket/material-1");
       
       // Transfer to buyer
       await vault.connect(creator).transferFrom(creator.address, buyer.address, 0);
@@ -123,7 +123,7 @@ describe("EduVault (archived legacy EVM prototype)", function () {
     it("handles safeTransferFrom correctly", async function () {
       const { buyer, creator, vault } = await deployVault();
 
-      await vault.connect(creator).mint("ipfs://eduvault/material-1");
+      await vault.connect(creator).mint("ipfs://scholarmarket/material-1");
       await vault.connect(creator).safeTransferFrom(creator.address, buyer.address, 0);
 
       assert.deepEqual(tokenIds(await vault.tokensOfOwner(creator.address)), []);
@@ -136,7 +136,7 @@ describe("EduVault (archived legacy EVM prototype)", function () {
     it("handles transfers to and from zero-address correctly", async function () {
       const { creator, vault } = await deployVault();
 
-      await vault.connect(creator).mint("ipfs://eduvault/material-1");
+      await vault.connect(creator).mint("ipfs://scholarmarket/material-1");
       
       // Verify token exists and is owned by creator
       assert.equal(await vault.ownerOf(0), creator.address);
@@ -165,7 +165,7 @@ describe("EduVault (archived legacy EVM prototype)", function () {
     it("prevents unauthorized transfers", async function () {
       const { buyer, creator, vault } = await deployVault();
 
-      await vault.connect(creator).mint("ipfs://eduvault/material-1");
+      await vault.connect(creator).mint("ipfs://scholarmarket/material-1");
 
       await assert.rejects(
         vault.connect(buyer).transferFrom(creator.address, buyer.address, 0),
@@ -179,7 +179,7 @@ describe("EduVault (archived legacy EVM prototype)", function () {
     it("handles rapid successive transfers of same token", async function () {
       const { buyer, creator, others, receiver, vault } = await deployVault();
 
-      await vault.connect(creator).mint("ipfs://eduvault/material-1");
+      await vault.connect(creator).mint("ipfs://scholarmarket/material-1");
 
       // Rapid transfers
       await vault.connect(creator).transferFrom(creator.address, buyer.address, 0);

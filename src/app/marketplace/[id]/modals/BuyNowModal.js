@@ -63,7 +63,7 @@ function useQuote(materialId, asset, price) {
 }
 
 function createLocalTxHash() {
-  return `eduvault_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 12)}`;
+  return `scholarmarket_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 12)}`;
 }
 
 export default function BuyNowModal({

@@ -63,7 +63,7 @@ export async function GET(request) {
       records.push({
         date,
         itemId: "Payout",
-        buyerWallet: "EduVault",
+        buyerWallet: "ScholarMarket",
         price: `-${p.amount || 0}`,
         paidAsset: p.currency || "XLM",
         status: p.status || "completed"

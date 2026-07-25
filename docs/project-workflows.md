@@ -1,6 +1,6 @@
 # Project Workflows
 
-EduVault supports three primary product paths: creators publish resources, learners discover and access resources, and marketplace services coordinate listings, purchases, and entitlement checks.
+ScholarMarket supports three primary product paths: creators publish resources, learners discover and access resources, and marketplace services coordinate listings, purchases, and entitlement checks.
 
 ## Creator Workflow
 
