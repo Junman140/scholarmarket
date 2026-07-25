@@ -198,27 +198,22 @@ npm run test:contracts
 
 ## Roadmap
 
-### Near Term
+### Completed Milestones
 
-- Clean up stale chain-specific UI references
-- Improve creator onboarding and material publishing flows
-- Finalize Soroban contract interfaces for registry and entitlement logic
-
-### Next Milestone
-
-- Add Stellar wallet support
-- Deploy Soroban contracts to Stellar testnet
-- Support XLM and USDC-based checkout
-- Gate downloads based on on-chain entitlement state
-- Add creator payout accounting
+- **Stellar/Soroban Migration**: Successfully transitioned to a native Stellar/Soroban blockchain architecture.
+- **Smart Contracts**: Implemented and tested Rust-based Soroban contracts:
+  - `material-registry` for secure registration of educational assets on-chain.
+  - `purchase-manager` for handling purchasing state and entitlements.
+- **Wallet Integration**: Completed Stellar wallet support via Freighter.
+- **Entitlement Gating**: Integrated on-chain download gating that verifies content ownership before accessing IPFS-pinned resources.
 
 ### Future Improvements
 
-- Educator and institution verification
-- Bulk licensing for schools and learning communities
-- Institution-issued access assets and scholarship credits
-- Creator analytics and reporting
-- Mobile-first purchase flow for low-bandwidth environments
+- **Educator and Institution Verification**: Verified profiles for schools, colleges, and recognized educators.
+- **Bulk Licensing**: Subscriptions and multi-seat licensing models for schools and learning communities.
+- **Scholarship Credits**: Institution-issued access vouchers and learning incentives.
+- **Advanced Creator Analytics**: Deeper dashboard reports for views, sales, and geographical metrics.
+- **Mobile-First Optimization**: Ultra-lightweight purchase flows for low-bandwidth and mobile-only environments.
 
 ## Contributing
 
@@ -240,4 +235,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Maintainer
 
-Maintained by [Obiajulu-gif](https://github.com/Obiajulu-gif).
+Maintained by [favouronyinye](https://github.com/favouronyinye).
