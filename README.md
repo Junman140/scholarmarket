@@ -43,7 +43,7 @@ ScholarMarket provides a creator-first marketplace where learning materials can 
 - wagmi and RainbowKit
 - Hardhat and OpenZeppelin for the archived EVM prototype
 
-### Planned Stellar Additions
+### Stellar Additions
 
 - Soroban smart contracts written in Rust
 - Stellar SDK and RPC/Horizon clients
@@ -66,7 +66,7 @@ Next.js API Routes
       |---------------------> Email Service
       |
       v
-Planned Stellar Layer
+Stellar Layer
       |
       v
 Soroban Contracts + Stellar RPC/Horizon
@@ -78,14 +78,7 @@ Soroban Contracts + Stellar RPC/Horizon
 - Backend: Next.js route handlers for uploads, profiles, and catalog operations
 - Storage: MongoDB for profiles and marketplace metadata
 - File persistence: IPFS pinning through Pinata
-- Wallet prototype: wagmi, RainbowKit, WalletConnect, and Coinbase Wallet support
-- Legacy contract: archived Solidity proof of concept in `archive/legacy-evm/`
-
-## Legacy EVM Prototype
-
-The repository includes an archived Solidity/Celo proof of concept under `archive/legacy-evm/`.
-
-This legacy code is kept for historical reference and testing only. New blockchain work should target Stellar and Soroban.
+- Wallet prototype: StellarWalletKit, wagmi, RainbowKit, WalletConnect, and Coinbase Wallet support
 
 ## Getting Started
 
