@@ -113,14 +113,10 @@ export default function UploadWizard() {
   };
 
   const handleSwitchChain = async () => {
-    try {
-      setSwitchingChain(true);
-      await switchChainAsync({ chainId: celoSepolia.id });
-    } catch (err) {
-      console.error("Failed to switch chain:", err);
-    } finally {
-      setSwitchingChain(false);
-    }
+    // Legacy EVM chain switch logic removed.
+    // For Stellar, network switching is handled by the wallet itself.
+    setError("Please switch your wallet network to Stellar Testnet.");
+    setErrorType("chain");
   };
 
   const validateStep = (step) => {
@@ -183,27 +179,6 @@ export default function UploadWizard() {
     setError(null);
     if (currentStep > 1) {
       setCurrentStep(currentStep - 1);
-    }
-  };
-
-  const handleSwitchChain = async () => {
-    setError(null);
-    setSwitchingChain(true);
-    try {
-      await switchChainAsync({ chainId: celoSepolia.id });
-    } catch (err) {
-      if (err.code === "ACTION_REJECTED" || err.message?.includes("User rejected")) {
-        setError("Network switch was rejected. Please switch to Stellar Testnet to publish.");
-        setErrorType("chain");
-      } else if (err.message?.includes("does not support")) {
-        setError("Your wallet does not support switching to Stellar Testnet. Please switch manually.");
-        setErrorType("chain");
-      } else {
-        setError(err.message || "Failed to switch network. Please try manually.");
-        setErrorType("chain");
-      }
-    } finally {
-      setSwitchingChain(false);
     }
   };
 
