@@ -40,8 +40,6 @@ ScholarMarket provides a creator-first marketplace where learning materials can 
 - MongoDB
 - Pinata/IPFS
 - Nodemailer
-- wagmi and RainbowKit
-- Hardhat and OpenZeppelin for the archived EVM prototype
 
 ### Stellar Additions
 
@@ -78,7 +76,7 @@ Soroban Contracts + Stellar RPC/Horizon
 - Backend: Next.js route handlers for uploads, profiles, and catalog operations
 - Storage: MongoDB for profiles and marketplace metadata
 - File persistence: IPFS pinning through Pinata
-- Wallet prototype: StellarWalletKit, wagmi, RainbowKit, WalletConnect, and Coinbase Wallet support
+- Wallet prototype: Stellar wallet integration
 
 ## Getting Started
 
@@ -165,12 +163,6 @@ Run backend tests:
 
 ```bash
 npm run test:backend
-```
-
-Run archived Solidity prototype tests:
-
-```bash
-npm run test:contracts
 ```
 
 ## Documentation
