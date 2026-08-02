@@ -182,7 +182,7 @@ export async function POST(request) {
           validatePinataResponse(uploadedFile, 'document')
           
           const fileUrl = await retryWithBackoff(
-            () => pinata.gateways.public.convert(uploadedFile.cid),
+            () => pinata.gateways.public.convert(results.storageKey),
             3,
             1000,
             (err, attempt) => {
@@ -191,7 +191,7 @@ export async function POST(request) {
           )
           validateGatewayUrl(fileUrl, 'document')
           results.fileUrl = fileUrl
-          results.storageKey = uploadedFile.cid
+          results.storageKey = results.storageKey
         } catch (err) {
           auditLog({
             event: 'upload_failed',
@@ -242,17 +242,7 @@ export async function POST(request) {
               { status: 500 }
             )
           }
-        const uploadedFile = await pinata.upload.public.file(file)
-        const fileUrl = await pinata.gateways.public.convert(uploadedFile.cid)
-        results.fileUrl = fileUrl
-
-        // 5️⃣ Upload thumbnail (if provided)
-        if (image) {
-          const fileThumb = await pinata.upload.public.file(image)
-          const imgUrl = await pinata.gateways.public.convert(fileThumb.cid)
-          results.imgUrl = imgUrl
         }
-
         // 6️⃣ Prepare the rest of the form data as JSON
         const otherFields = {}
         for (const [key, value] of form.entries()) {
@@ -299,7 +289,7 @@ export async function POST(request) {
               maxItems: 6,
               maxLength: 280,
             }),
-            storageKey: uploadedFile.cid,
+            storageKey: results.storageKey,
             fileUrl: results.fileUrl,
             timestamp: new Date().toISOString(),
           },
@@ -376,15 +366,10 @@ export async function POST(request) {
           status: 200,
         })
 
-        // 8️⃣ Return the CID as storageKey and also include URLs for backwards-compatibility
-        return NextResponse.json({
-          success: true,
-          storageKey: results.storageKey,
-          fileUrl: results.fileUrl,
         // 8️⃣ Return the CID as storageKey
         return NextResponse.json({
           success: true,
-          storageKey: uploadedFile.cid,
+          storageKey: results.storageKey,
           image: results.imgUrl || '',
           metadata: results.metadataUrl,
         })

@@ -15,11 +15,7 @@ import {
   FaExternalLinkAlt, 
   FaExclamationTriangle 
 } from "react-icons/fa";
-import { useAccount, useWriteContract, useWaitForTransactionReceipt, useSwitchChain } from "wagmi";
-import { FaCloudUploadAlt, FaCheck, FaArrowRight, FaArrowLeft, FaFileAlt, FaTags, FaDollarSign, FaEye, FaExclamationTriangle } from "react-icons/fa";
 import { useWallet } from "@/hooks/useWallet";
-import { abi } from "../../../../../contracts/ScholarMarketAbi.js";
-import { parseAbiItem } from "viem";
 import { useCreateMaterial, useUploadFile } from "@/hooks/api/useMaterials";
 import TransactionStatusPanel from "@/components/transactions/TransactionStatusPanel";
 import { useTransactionCenter } from "@/providers/TransactionProvider";
@@ -82,7 +78,6 @@ export default function UploadWizard() {
   const uploadFileMutation = useUploadFile();
   const createMaterialMutation = useCreateMaterial();
 
-  const chainMismatch = address && chainId && !isUploadChain(chainId);
   const chainMismatch = false;
 
   useEffect(() => {
@@ -711,40 +706,6 @@ export default function UploadWizard() {
                     Upload your lecture notes, projects, or study materials. Supported formats: PDF, DOCX, PPTX, ZIP (max 10MB).
                   </p>
                 </div>
-        {/* Step 3: Pricing & Rights */}
-        {currentStep === 3 && (
-          <div className="space-y-5">
-            <div>
-              <h3 className="text-lg font-semibold mb-2">Pricing & Usage Rights</h3>
-              <p className="text-sm text-gray-600 mb-4">
-                Set your price and define how others can use your material.
-              </p>
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium mb-2">Price (XLM) - Optional</label>
-              <input
-                type="number"
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
-                placeholder="0.00"
-                className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-blue-100 focus:border-blue-500"
-              />
-              <p className="text-xs text-gray-500 mt-1">Leave empty for free material</p>
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium mb-2">Usage Rights</label>
-              <select
-                value={usageRights}
-                onChange={(e) => setUsageRights(e.target.value)}
-                className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-blue-100 focus:border-blue-500"
-              >
-                <option>Standard License (download only)</option>
-                <option>Creative Commons</option>
-                <option>Private Use Only</option>
-              </select>
-            </div>
 
                 <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-blue-400 transition">
                   <input
@@ -996,20 +957,14 @@ export default function UploadWizard() {
                   </div>
                 </div>
 
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
                   <p className="text-sm text-blue-800">
-                    <strong>Note:</strong> Publishing will mint your material as an NFT on the blockchain. A small gas fee will be charged.
+                    <strong>Note:</strong> Publishing will mint your material as an NFT on the blockchain. XLM transaction fees will apply.
                   </p>
                 </div>
               </div>
             )}
           </>
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-              <p className="text-sm text-blue-800">
-                <strong>Note:</strong> Publishing will mint your material as an NFT on the blockchain. XLM transaction fees will apply.
-              </p>
-            </div>
-          </div>
         )}
       </div>
 
