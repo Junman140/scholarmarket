@@ -182,8 +182,7 @@ export default function UploadWizard() {
     }
   };
 
-  const uploadFileMutation = useUploadFile();
-  const createMaterialMutation = useCreateMaterial();
+
 
   const handleSubmit = async () => {
     setError(null);
