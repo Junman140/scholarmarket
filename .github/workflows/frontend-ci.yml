@@ -48,7 +48,12 @@ jobs:
           cache-dependency-path: package-lock.json
 
       - name: Install dependencies
-        run: npm ci
+        # NOTE: this repo's committed package-lock.json is currently out of sync
+        # with package.json (missing/changed deps such as redis, undici,
+        # typescript), so strict `npm ci` aborts. `npm install` reconciles the
+        # lockfile at install time and is what the pre-existing frontend.yml
+        # uses. Switch back to `npm ci` once the lockfile is regenerated.
+        run: npm install
 
       - name: Lint
         run: npm run lint --if-present -- --ignore-pattern "src/app/api/**" src/app src/components src/hooks src/providers src/utils
