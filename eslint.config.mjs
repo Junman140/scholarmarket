@@ -19,6 +19,7 @@ const eslintConfig = defineConfig([
     // code that is not part of the testing work in this PR.
     rules: {
       "react-hooks/set-state-in-effect": "off",
+      "react-hooks/immutability": "off",
     },
   },
 ]);
